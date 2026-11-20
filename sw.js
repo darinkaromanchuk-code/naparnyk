@@ -1,4 +1,4 @@
-const CACHE = 'naparnyk-flat-1907933e60';
+const CACHE = 'naparnyk-flat-95a14d497b';
 const PRECACHE = [
   "./",
   "app.css",

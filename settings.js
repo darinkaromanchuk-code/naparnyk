@@ -65,6 +65,7 @@ export function renderSettings(ctx) {
       h('p', {}, ctx.content.about.text),
       h('p', { class: 'muted small' }, ctx.content.about.credit),
       h('p', { class: 'muted small' }, ctx.content.disclaimer)),
+    h('a', { class: 'btn', href: ctx.content.feedbackUrl, target: '_blank', rel: 'noopener' }, 'Залишити відгук (анонімно)'),
     h('button', { class: 'btn', onclick: () => ctx.go('help') }, 'Контакти допомоги'),
     nav(ctx, 'settings')));
 }

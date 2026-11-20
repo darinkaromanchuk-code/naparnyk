@@ -47,6 +47,9 @@ export function renderProgress(ctx) {
               `${sc.name}: ${pre.scales[sc.short]} → ${post.scales[sc.short]} (${compare(pre.scales[sc.short], post.scales[sc.short])})`))),
             h('p', { class: 'muted small' }, 'Це не діагноз, а орієнтир для тебе. Результатом можна поділитися з психологом.'),
           ]),
+    h('section', { class: 'card' },
+      h('p', { class: 'small' }, 'Розкажи, що допомагає, а що варто змінити. Це анонімно і займає 2 хвилини.'),
+      h('a', { class: 'btn', href: ctx.content.feedbackUrl, target: '_blank', rel: 'noopener' }, 'Залишити відгук (анонімно)')),
     nav(ctx, 'progress')));
 }
 
