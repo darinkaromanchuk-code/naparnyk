@@ -1,7 +1,7 @@
 import { h, mount, screen } from './dom.js';
 import { nav } from './home.js';
-import { scoreRRS } from '../core/rrs.js';
-import { programDay } from '../core/program.js';
+import { scoreRRS } from './rrs.js';
+import { programDay } from './program.js';
 
 function addDays(iso, n) {
   const [y, m, d] = iso.split('-').map(Number);

@@ -590,7 +590,7 @@
         },
         {
           "type": "audio",
-          "src": "audio/music.mp3"
+          "src": "music.mp3"
         },
         {
           "type": "rating",
@@ -611,7 +611,7 @@
         },
         {
           "type": "audio",
-          "src": "audio/meditation.mp3"
+          "src": "meditation.mp3"
         },
         {
           "type": "rating",

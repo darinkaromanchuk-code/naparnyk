@@ -1,5 +1,5 @@
 import { h, mount, screen } from './dom.js';
-import { recordExercise, stepProgress } from '../core/session.js';
+import { recordExercise, stepProgress } from './session.js';
 
 let cleanups = [];
 function cleanup() { cleanups.forEach((f) => f()); cleanups = []; }

@@ -1,5 +1,5 @@
 import { h, mount, screen } from './dom.js';
-import { firstUnanswered, scoreRRS } from '../core/rrs.js';
+import { firstUnanswered, scoreRRS } from './rrs.js';
 
 export function renderRRS(ctx, { which = 'pre' } = {}) {
   const answers = ctx.store.get().rrs[which].answers;

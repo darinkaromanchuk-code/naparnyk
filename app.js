@@ -1,18 +1,18 @@
-import { createStore, todayISO } from './core/store.js';
-import { phase } from './core/program.js';
-import { h, mount } from './ui/dom.js';
+import { createStore, todayISO } from './store.js';
+import { phase } from './program.js';
+import { h, mount } from './dom.js';
 
 const ROUTES = {
-  onboarding: () => import('./ui/onboarding.js').then((m) => m.renderOnboarding),
-  rrs: () => import('./ui/rrs-screen.js').then((m) => m.renderRRS),
-  home: () => import('./ui/home.js').then((m) => m.renderHome),
-  step: () => import('./ui/exercise.js').then((m) => m.renderStep),
-  exercise: () => import('./ui/exercise.js').then((m) => m.renderExerciseScreen),
-  sos: () => import('./ui/sos.js').then((m) => m.renderSOS),
-  diary: () => import('./ui/diary.js').then((m) => m.renderDiary),
-  progress: () => import('./ui/progress.js').then((m) => m.renderProgress),
-  settings: () => import('./ui/settings.js').then((m) => m.renderSettings),
-  help: () => import('./ui/settings.js').then((m) => m.renderHelp),
+  onboarding: () => import('./onboarding.js').then((m) => m.renderOnboarding),
+  rrs: () => import('./rrs-screen.js').then((m) => m.renderRRS),
+  home: () => import('./home.js').then((m) => m.renderHome),
+  step: () => import('./exercise.js').then((m) => m.renderStep),
+  exercise: () => import('./exercise.js').then((m) => m.renderExerciseScreen),
+  sos: () => import('./sos.js').then((m) => m.renderSOS),
+  diary: () => import('./diary.js').then((m) => m.renderDiary),
+  progress: () => import('./progress.js').then((m) => m.renderProgress),
+  settings: () => import('./settings.js').then((m) => m.renderSettings),
+  help: () => import('./settings.js').then((m) => m.renderHelp),
 };
 
 function debugToday() {
@@ -30,7 +30,7 @@ async function start() {
   let storage;
   try { storage = window.localStorage; } catch { storage = null; }
   const store = createStore(storage);
-  const [content, rrs] = await Promise.all([loadJSON('content/content.json'), loadJSON('content/rrs.json')]);
+  const [content, rrs] = await Promise.all([loadJSON('content.json'), loadJSON('rrs.json')]);
   const fixedToday = debugToday();
 
   const ctx = {

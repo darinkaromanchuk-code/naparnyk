@@ -1,6 +1,6 @@
 import { h, mount, screen } from './dom.js';
 import { ratingBlock, renderExercise } from './exercise.js';
-import { recordExercise } from '../core/session.js';
+import { recordExercise } from './session.js';
 
 export function renderSOS(ctx) {
   let before;

@@ -1,7 +1,7 @@
 import { h, mount, trustedSVG } from './dom.js';
 import { sceneSVG, faceFor } from './art.js';
-import { nextStep, retestDue, phase, programDay } from '../core/program.js';
-import { gremlinLevel, companionMood, homeLevel } from '../core/game.js';
+import { nextStep, retestDue, phase, programDay } from './program.js';
+import { gremlinLevel, companionMood, homeLevel } from './game.js';
 
 function moodText(name, face, mood) {
   if (face === 'sad') return `Над вами хмари. ${name} поруч — розженімо їх разом.`;
