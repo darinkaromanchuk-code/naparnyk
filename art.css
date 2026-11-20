@@ -1,0 +1,25 @@
+.companion .body, .companion .head, .companion .tail, .companion .eye, .smoke-body { transform-box: fill-box; }
+.companion .body { transform-origin: 50% 100%; animation: breathe 4.5s ease-in-out infinite; }
+.companion .head { transform-origin: 50% 90%; }
+.companion .tail { transform-origin: 90% 100%; }
+.companion .eye { transform-origin: 50% 50%; animation: blink 5s infinite; }
+.face-joy .tail { animation: wag .35s ease-in-out infinite alternate; }
+.face-joy .head { animation: bounce 1.2s ease-in-out 2; }
+.face-sad .head { transform: translateY(5px) rotate(-5deg); }
+.face-sad .body { animation-duration: 6s; }
+
+.smoke-body { transform-origin: 30% 100%; animation: drift 6s ease-in-out infinite; }
+.scene.shrink .smoke-body { animation: dissolve 1.6s ease-in-out 1, drift 6s ease-in-out 1.6s infinite; }
+.lantern rect:nth-child(2) { animation: flicker 2.6s ease-in-out infinite; }
+
+@keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.025, 1.035); } }
+@keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(.1); } }
+@keyframes wag { from { transform: rotate(-12deg); } to { transform: rotate(14deg); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-8px); } }
+@keyframes drift { 0%, 100% { transform: translateX(0) skewX(0); } 50% { transform: translateX(4px) skewX(-3deg) scale(1.02); } }
+@keyframes dissolve { 0% { transform: scale(1.15); opacity: 1; } 60% { transform: scale(.8); opacity: .5; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes flicker { 0%, 100% { opacity: 1; } 50% { opacity: .75; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .companion *, .smoke-body, .lantern * { animation: none !important; transition: none !important; }
+}
